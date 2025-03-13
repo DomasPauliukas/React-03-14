@@ -1,0 +1,407 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Laptop",
+      "description": "A powerful laptop for gaming and work.",
+      "price": 1200,
+      "categoryId": "1",
+      "stock": 50,
+      "image": "https://www.egnetas.lt/wp-content/uploads/2024/04/Microsoft-Surface-Laptop-6-15-platinum-nesiojamas-kompiuteris.jpg",
+      "rating": 4.5
+    },
+    {
+      "id": "2",
+      "name": "Smartphone",
+      "description": "Latest model with advanced features.",
+      "price": 800,
+      "categoryId": "1",
+      "stock": 100,
+      "image": "https://www.honor.com/content/dam/honor/sa-en/blog/2024/5-things-a-smartphone-can-do/imgs-01.jpg",
+      "rating": 4
+    },
+    {
+      "id": "3",
+      "name": "Coffee Maker",
+      "description": "Brew your perfect cup of coffee.",
+      "price": 150,
+      "categoryId": "2",
+      "stock": 30,
+      "image": "https://i5.walmartimages.com/seo/Mainstays-Black-5-Cup-Drip-Coffee-Maker-New_16f77040-27ab-4008-9852-59c900d7a7d9_1.c524f1d9c465e122596bf65f939c8d26.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
+      "rating": 4.7
+    },
+    {
+      "id": "4",
+      "name": "Air Conditioner",
+      "description": "Stay cool with this energy-efficient air conditioner.",
+      "price": 500,
+      "categoryId": "2",
+      "stock": 20,
+      "image": "https://sovpsl.com/wp-content/uploads/2015/11/air-conditioning.jpg",
+      "rating": 4.3
+    },
+    {
+      "id": "5",
+      "name": "Smart Watch",
+      "description": "Track your health with this smart watch.",
+      "price": 200,
+      "categoryId": "1",
+      "stock": 75,
+      "image": "https://m.media-amazon.com/images/I/61ZjlBOp+rL.jpg",
+      "rating": 4.1
+    },
+    {
+      "id": "6",
+      "name": "Bluetooth Speaker",
+      "description": "Portable and powerful sound.",
+      "price": 120,
+      "categoryId": "1",
+      "stock": 50,
+      "image": "https://images-cdn.ubuy.co.in/633ff668d5bfc656c91eef1a-bluetooth-speaker-60w80w-peak-booming.jpg",
+      "rating": 4.4
+    },
+    {
+      "id": "7",
+      "name": "Electric Toothbrush",
+      "description": "Whiten your teeth with this high-tech toothbrush.",
+      "price": 70,
+      "categoryId": "3",
+      "stock": 100,
+      "image": "https://periosciences.com/cdn/shop/products/Electric-Toothbrush-1.jpg?v=1679863594",
+      "rating": 4.6
+    },
+    {
+      "id": "8",
+      "name": "Tennis Racket",
+      "description": "Top-quality racket for the best performance on the court.",
+      "price": 90,
+      "categoryId": "4",
+      "stock": 25,
+      "image": "https://www.e-tennis.com/media/catalog/product/cache/9f6a0f2a2b1968473f9efdabe1103d96/w/r/wr066310-wilson_roland_garros_team_tennis_racquet_2021_-1-p.webp",
+      "rating": 4.8
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Electronics"
+    },
+    {
+      "id": "2",
+      "name": "Home Appliances"
+    },
+    {
+      "id": "3",
+      "name": "Health & Beauty"
+    },
+    {
+      "id": "4",
+      "name": "Sports"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "john_doe",
+      "email": "john@example.com",
+      "firstName": "John",
+      "lastName": "Doe",
+      "address": "123 Main St, Springfield",
+      "phone": "555-1234",
+      "profilePicture": "https://capecoraltech.edu/wp-content/uploads/2016/01/tutor-8-3.jpg"
+    },
+    {
+      "id": "2",
+      "username": "jane_doe",
+      "email": "jane@example.com",
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "address": "456 Elm St, Springfield",
+      "phone": "555-5678",
+      "profilePicture": "https://media.istockphoto.com/id/1437816897/photo/business-woman-manager-or-human-resources-portrait-for-career-success-company-we-are-hiring.jpg?s=612x612&w=0&k=20&c=tyLvtzutRh22j9GqSGI33Z4HpIwv9vL_MZw_xOE19NQ="
+    },
+    {
+      "id": "3",
+      "username": "mark_smith",
+      "email": "mark@example.com",
+      "firstName": "Mark",
+      "lastName": "Smith",
+      "address": "789 Oak St, Springfield",
+      "phone": "555-9012",
+      "profilePicture": "https://media.istockphoto.com/id/1682296067/photo/happy-studio-portrait-or-professional-man-real-estate-agent-or-asian-businessman-smile-for.jpg?s=612x612&w=0&k=20&c=9zbG2-9fl741fbTWw5fNgcEEe4ll-JegrGlQQ6m54rg="
+    },
+    {
+      "id": "4",
+      "username": "susan_williams",
+      "email": "susan@example.com",
+      "firstName": "Susan",
+      "lastName": "Williams",
+      "address": "101 Pine St, Springfield",
+      "phone": "555-3456",
+      "profilePicture": "https://www.perfocal.com/blog/content/images/2021/01/Perfocal_17-11-2019_TYWFAQ_100_standard-3.jpg"
+    },
+    {
+      "id": "5",
+      "username": "alice_jones",
+      "email": "alice@example.com",
+      "firstName": "Alice",
+      "lastName": "Jones",
+      "address": "102 Maple St, Springfield",
+      "phone": "555-6789",
+      "profilePicture": "https://annemariesegal.com/wp-content/uploads/2017/04/adobestock_86346713-cropped-young-woman-in-suit.jpg?w=640"
+    },
+    {
+      "id": "6",
+      "username": "bob_miller",
+      "email": "bob@example.com",
+      "firstName": "Bob",
+      "lastName": "Miller",
+      "address": "303 Birch St, Springfield",
+      "phone": "555-2345",
+      "profilePicture": "https://www.shutterstock.com/image-photo/portrait-smile-man-on-wood-260nw-2440362587.jpg"
+    },
+    {
+      "username": "emma_davis",
+      "email": "emma@example.com",
+      "lastName": "Davis",
+      "firstName": "Emma",
+      "address": "404 Oak St, Springfield",
+      "phone": "555-4567",
+      "id": "7"
+    },
+    {
+      "id": "8",
+      "username": "david_wilson",
+      "email": "david@example.com",
+      "firstName": "David",
+      "lastName": "Wilson",
+      "address": "505 Cedar St, Springfield",
+      "phone": "555-7890",
+      "profilePicture": "https://www.elitesingles.com.au/wp-content/uploads/sites/77/2020/06/profileprotectionsnap-350x264.jpg"
+    },
+    {
+      "id": "9",
+      "username": "lisa_white",
+      "email": "lisa@example.com",
+      "firstName": "Lisa",
+      "lastName": "White",
+      "address": "606 Pine St, Springfield",
+      "phone": "555-0123",
+      "profilePicture": "https://writestylesonline.com/wp-content/uploads/2019/01/What-To-Wear-For-Your-Professional-Profile-Picture-or-Headshot.jpg"
+    },
+    {
+      "id": "10",
+      "username": "kevin_johnson",
+      "email": "kevin@example.com",
+      "firstName": "Kevin",
+      "lastName": "Johnson",
+      "address": "707 Elm St, Springfield",
+      "phone": "555-3456",
+      "profilePicture": "https://beaconnected.me/wp-content/uploads/sites/24763/2021/12/headshot_1-min.jpg"
+    },
+    {
+      "username": "Bunke",
+      "email": "domas.pauliukas@codeacademylt.onmicrosoft.com",
+      "lastName": "Bunke",
+      "firstName": "Kristina",
+      "address": "Kaunas",
+      "phone": "asas564",
+      "photo": "",
+      "id": "345d"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1",
+      "productId": "1",
+      "userId": "1",
+      "rating": 5,
+      "comment": "Great laptop! Super fast and smooth performance.",
+      "createdAt": "2025-03-10T10:00:00Z"
+    },
+    {
+      "id": "2",
+      "productId": "1",
+      "userId": "2",
+      "rating": 4,
+      "comment": "Solid performance, but could be lighter.",
+      "createdAt": "2025-03-11T11:00:00Z"
+    },
+    {
+      "id": "3",
+      "productId": "1",
+      "userId": "3",
+      "rating": 4,
+      "comment": "Nice laptop, but the battery life could be improved.",
+      "createdAt": "2025-03-12T14:00:00Z"
+    },
+    {
+      "id": "4",
+      "productId": "2",
+      "userId": "3",
+      "rating": 4,
+      "comment": "Very good smartphone for the price. Battery life could be better.",
+      "createdAt": "2025-03-12T14:00:00Z"
+    },
+    {
+      "id": "5",
+      "productId": "2",
+      "userId": "4",
+      "rating": 5,
+      "comment": "Amazing phone! Super fast and responsive.",
+      "createdAt": "2025-03-13T15:30:00Z"
+    },
+    {
+      "id": "6",
+      "productId": "2",
+      "userId": "1",
+      "rating": 3,
+      "comment": "Good phone but the camera could be better.",
+      "createdAt": "2025-03-14T16:45:00Z"
+    },
+    {
+      "id": "7",
+      "productId": "3",
+      "userId": "2",
+      "rating": 4,
+      "comment": "Good coffee maker, brews great coffee but a little noisy.",
+      "createdAt": "2025-03-11T12:00:00Z"
+    },
+    {
+      "id": "8",
+      "productId": "3",
+      "userId": "3",
+      "rating": 5,
+      "comment": "Brews coffee perfectly every time! Very happy with this.",
+      "createdAt": "2025-03-12T10:30:00Z"
+    },
+    {
+      "id": "9",
+      "productId": "3",
+      "userId": "4",
+      "rating": 4,
+      "comment": "Very good, but cleaning could be easier.",
+      "createdAt": "2025-03-13T13:00:00Z"
+    },
+    {
+      "id": "10",
+      "productId": "5",
+      "userId": "1",
+      "rating": 4,
+      "comment": "Nice smart watch. Works well for fitness tracking, but not as stylish as expected.",
+      "createdAt": "2025-03-13T08:30:00Z"
+    },
+    {
+      "id": "11",
+      "productId": "5",
+      "userId": "2",
+      "rating": 5,
+      "comment": "Great watch! Tracks my health and looks great with everything.",
+      "createdAt": "2025-03-14T09:00:00Z"
+    },
+    {
+      "id": "12",
+      "productId": "5",
+      "userId": "4",
+      "rating": 3,
+      "comment": "Works fine, but doesn't sync well with my phone.",
+      "createdAt": "2025-03-14T11:00:00Z"
+    },
+    {
+      "id": "13",
+      "productId": "1",
+      "userId": "5",
+      "rating": 4,
+      "comment": "Great laptop! The performance is solid, but it gets a bit hot under heavy use.",
+      "createdAt": "2025-03-15T09:00:00Z"
+    },
+    {
+      "id": "14",
+      "productId": "2",
+      "userId": "5",
+      "rating": 5,
+      "comment": "Amazing smartphone! The camera is fantastic, and the battery life lasts all day.",
+      "createdAt": "2025-03-16T10:00:00Z"
+    },
+    {
+      "id": "15",
+      "productId": "3",
+      "userId": "6",
+      "rating": 3,
+      "comment": "It's an okay coffee maker. It brews coffee, but it's a bit slow, and the cleaning process isn't great.",
+      "createdAt": "2025-03-15T11:00:00Z"
+    },
+    {
+      "id": "16",
+      "productId": "4",
+      "userId": "6",
+      "rating": 4,
+      "comment": "Good air conditioner. Cools the room quickly but makes a bit of noise when running.",
+      "createdAt": "2025-03-16T12:30:00Z"
+    },
+    {
+      "id": "17",
+      "productId": "5",
+      "userId": "7",
+      "rating": 5,
+      "comment": "Perfect smartwatch for fitness tracking. Syncs well with my phone and has lots of useful features.",
+      "createdAt": "2025-03-16T14:00:00Z"
+    },
+    {
+      "id": "18",
+      "productId": "6",
+      "userId": "7",
+      "rating": 4,
+      "comment": "Great portable speaker! The sound is clear and powerful, but the battery could last longer.",
+      "createdAt": "2025-03-17T09:00:00Z"
+    },
+    {
+      "id": "19",
+      "productId": "7",
+      "userId": "8",
+      "rating": 5,
+      "comment": "Best electric toothbrush I've ever used! My teeth feel cleaner, and it's very easy to use.",
+      "createdAt": "2025-03-17T10:30:00Z"
+    },
+    {
+      "id": "20",
+      "productId": "8",
+      "userId": "8",
+      "rating": 4,
+      "comment": "Great tennis racket! Excellent balance and performance, but the grip could be a little better.",
+      "createdAt": "2025-03-17T12:00:00Z"
+    },
+    {
+      "id": "21",
+      "productId": "1",
+      "userId": "9",
+      "rating": 4,
+      "comment": "Laptop is fast and reliable. I love it, but the display could be a bit brighter for outdoor use.",
+      "createdAt": "2025-03-17T13:00:00Z"
+    },
+    {
+      "id": "22",
+      "productId": "5",
+      "userId": "9",
+      "rating": 3,
+      "comment": "Nice smartwatch, but it doesn't track my steps as accurately as I expected.",
+      "createdAt": "2025-03-17T14:30:00Z"
+    },
+    {
+      "id": "23",
+      "productId": "6",
+      "userId": "1",
+      "rating": 5,
+      "comment": "Incredible Bluetooth speaker! Very loud and portable, perfect for parties and outdoor use.",
+      "createdAt": "2025-03-18T09:00:00Z"
+    },
+    {
+      "id": "24",
+      "productId": "7",
+      "userId": "1",
+      "rating": 4,
+      "comment": "Electric toothbrush works well. My teeth feel cleaner, but the vibration is a bit strong for sensitive gums.",
+      "createdAt": "2025-03-18T10:30:00Z"
+    }
+  ]
+}

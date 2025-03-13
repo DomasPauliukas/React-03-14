@@ -1,0 +1,30 @@
+.navWrapper{
+    margin-bottom: 80px;
+}
+.navigations{
+    background-color: blueviolet;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+}
+
+
+.navList{
+    display: flex;
+    justify-content: space-between;
+    column-gap: 25px;
+    margin: 0px;
+}
+
+.navItem{
+    list-style-type: none;
+    
+}
+.navLink{
+    color: azure;
+
+}
+.navLink.active{
+    text-decoration: underline;
+    color: white;
+}
