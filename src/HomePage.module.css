@@ -69,28 +69,3 @@
     grid-template-rows: 1fr;
   }
 }
-
-.secondarySectionItem {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 200px;
-  text-align: center;
-}
-@media (max-width: 900px) {
-  .secondarySectionItem {
-    width: 100%;
-  }
-}
-
-.secondarySectionItem h2 {
-  font-size: 1.5rem;
-  color: #3498db;
-  margin-bottom: 10px;
-}
-
-.secondarySectionItem p {
-  font-size: 1rem;
-  color: #666;
-}

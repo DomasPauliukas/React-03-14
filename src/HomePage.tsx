@@ -14,7 +14,6 @@ const HomePage: React.FC = () => {
           <a href="/Products" className={styles.styledButton}>Browse Products</a>
         </div>
       </section>
-      {/* className={styles.secondarySectionItem} */}
       <section className={styles.secondarySection}>
         <div className="card" style={{width: '18rem'}}>
           <img src={usersLogo} alt="user-logo" className='class="card-img-top"' style={{height:'250px', objectFit:'cover'}}/>
