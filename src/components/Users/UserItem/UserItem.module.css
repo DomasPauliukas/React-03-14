@@ -17,6 +17,13 @@
     border: 5px solid #3498db;
   }
 
+@media (max-width:800px) {
+    .userImage {
+        width: 200px;
+        height: 200px;
+    }
+}
+
 .userInfo {
     margin-bottom: 20px;
     font-family: 'Arial', sans-serif;

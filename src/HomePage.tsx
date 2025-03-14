@@ -13,15 +13,15 @@ const HomePage: React.FC = () => {
       </section>
 
       <section className={styles.secondarySection}>
-        <div className={styles.secodarySectionItem}>
+        <div className={styles.secondarySectionItem}>
           <h2>Users</h2>
           <p>Connect with a community of users and share your experiences.</p>
         </div>
-        <div className={styles.secodarySectionItem}>
+        <div className={styles.secondarySectionItem}>
           <h2>Products</h2>
           <p>Explore a variety of products to find what suits you best.</p>
         </div>
-        <div className={styles.secodarySectionItem}>
+        <div className={styles.secondarySectionItem}>
           <h2>Reviews</h2>
           <p>Check out reviews and see what others think before purchasing.</p>
         </div>

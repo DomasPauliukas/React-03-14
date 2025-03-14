@@ -12,7 +12,7 @@ const ReviewsPage: React.FC = () => {
         <div>
             {reviews && reviews.length > 0 ? (
                 <div>
-                    <h1>{reviews.length > 1 ? 'Reviews:' : 'Review:'}</h1>
+                    <h1 style={{textAlign:'center', marginTop:'100px'}}>{reviews.length > 1 ? 'Reviews:' : 'Review:'}</h1>
         
                     {reviews.map((review, index) => (
                             <ReviewItem key={index} review={review}/>
