@@ -1,12 +1,20 @@
 .navWrapper{
     margin-bottom: 80px;
 }
+
 .navigations{
     background-color: blueviolet;
     padding: 20px;
     position: fixed;
     top: 0;
     z-index: 10;
+}
+
+@media (max-width: 650px) {
+    .navigations {
+        left: 50%;
+        transform: translateX(-50%); 
+    }
 }
 
 

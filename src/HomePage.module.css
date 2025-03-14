@@ -25,6 +25,12 @@
   margin-bottom: 10px;
 }
 
+@media(max-width: 650px){
+  .mainSection h1 {
+    font-size: 2rem;
+  }
+}
+
 .mainSection p {
   font-size: 1.25rem;
   margin-bottom: 30px;
@@ -55,9 +61,16 @@
   justify-content: center;
   gap: 40px;
   margin-top: 40px;
+
+}
+@media (max-width: 900px) {
+  .secondarySection {
+    display: grid;
+    grid-template-rows: 1fr;
+  }
 }
 
-.secodarySectionItem {
+.secondarySectionItem {
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
@@ -65,14 +78,19 @@
   width: 200px;
   text-align: center;
 }
+@media (max-width: 900px) {
+  .secondarySectionItem {
+    width: 100%;
+  }
+}
 
-.secodarySectionItem h2 {
+.secondarySectionItem h2 {
   font-size: 1.5rem;
   color: #3498db;
   margin-bottom: 10px;
 }
 
-.secodarySectionItem p {
+.secondarySectionItem p {
   font-size: 1rem;
   color: #666;
 }
