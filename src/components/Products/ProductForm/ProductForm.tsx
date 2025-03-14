@@ -18,6 +18,8 @@ const ProductForm: React.FC<ProductFormProps> = ({editProductData}) => {
     const [stock, setStock] = useState(0)
     const [categoryId, setCategoryId] = useState('')
     const [categories, setCategories] = useState([])
+    const [rating, setRating] = useState<number | string>('No rating yet')
+
 
     const navigate = useNavigate()
 
@@ -50,7 +52,12 @@ const ProductForm: React.FC<ProductFormProps> = ({editProductData}) => {
           setImage(editProductData.image);
           setStock(editProductData.stock);
           setCategoryId(editProductData.categoryId);
-        }
+          setRating(editProductData.rating);
+
+          } else {
+          setRating("No rating yet");
+
+          }
       }, [editProductData]);
 
     const formHandler = async (event: React.FormEvent) => {
@@ -63,8 +70,8 @@ const ProductForm: React.FC<ProductFormProps> = ({editProductData}) => {
             image,
             stock,
             categoryId,
-            rating: 'no rating yet'
-        }
+            rating: editProductData ? editProductData.rating : "No rating yet"
+          }
 
 if (editProductData) {
     axios.put(`${API_URL}/products/${editProductData.id}`, newProduct);
@@ -82,71 +89,48 @@ if (editProductData) {
 }
     return (
         <div>
-            <h1>FORM</h1>
-            <form onSubmit={formHandler}>
-          <h2>Add a New Product</h2>
+            <h1 style={{textAlign:'center', fontSize:'28px'}}>{editProductData? 'Form to edit product information' : 'Form to add new product!'}</h1>
+            
+          <form onSubmit={formHandler}>
 
           <div className="formControl">
-                <label htmlFor="name">Product Name:</label>
-                <input type="text" id="name" name="name" value={name} onChange={nameHandler} required />
+              <label htmlFor="name">Product Name:</label>
+              <input type="text" id="name" name="name" value={name} onChange={nameHandler} required />
           </div>
 
-          <label htmlFor="description">Description:</label>
-          <textarea
-            id="description"
-            name="description"
-            value={description}
-            onChange={descriptionHandler}
-            required
-          />
+          <div className="formControl">
+            <label htmlFor="description">Description:</label>
+            <textarea id="description" name="description" value={description} onChange={descriptionHandler} required />
+          </div>
 
-          <label htmlFor="price">Price:</label>
-          <input
-            type="text"
-            id="price"
-            name="price"
-            value={price}
-            onChange={priceHandler}
-            required
-          />
+          <div className="formControl">
+            <label htmlFor="price">Price:</label>
+            <input type="text" id="price" name="price" value={price} onChange={priceHandler} required />
+          </div>
 
-          <label htmlFor="image">Image URL:</label>
-          <input
-            type="text"
-            id="image"
-            name="image"
-            value={image}
-            onChange={imageHandler}
-            required
-          />
+          <div className="formControl">
+            <label htmlFor="image">Image URL:</label>
+            <input type="text" id="image" name="image" value={image} onChange={imageHandler} required />
+          </div>
 
-          <label htmlFor="stock">Stock:</label>
-          <input
-            type="text"
-            id="stock"
-            name="stock"
-            value={stock}
-            onChange={stockHandler}
-            required
-          />
+          <div className="formControl">
+            <label htmlFor="stock">Stock:</label>
+            <input type="text" id="stock" name="stock" value={stock} onChange={stockHandler} required />
+          </div>
 
-          <label htmlFor="category">Category:</label>
-          <select
-            id="category"
-            name="categoryId"
-            value={categoryId}
-            onChange={handleCategorySelect}
-            required
-          >
-            <option value="">Select a category</option>
-            {categories.map((category: Category) => (
-              <option key={category.id} value={category.id}>
-                {category.name}
-              </option>
-            ))}
+          <div className="formControl">
+            <label htmlFor="category">Category:</label>
+            <select id="category" name="categoryId" value={categoryId} onChange={handleCategorySelect} required >
+              <option value="">Select a category</option>
+              {categories.map((category: Category) => (
+                <option key={category.id} value={category.id}>
+                  {category.name}
+                </option>
+              ))}
           </select>
+          </div>
 
-          <button type="submit">Add Product</button>
+          <button type="submit"> {editProductData? 'Edit product' : 'Add product'}</button>
         </form>
         </div>
     )

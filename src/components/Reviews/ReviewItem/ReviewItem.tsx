@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { Review } from "../../Types/ExportTypes";
+import styles from './ReviewItem.module.css'
 
 type ReviewItemProps = {
     review: Review;
@@ -13,12 +14,14 @@ const ReviewItem: React.FC<ReviewItemProps> = ( {review} ) => {
       }
 
     return (
-        <div>
-            <h3>Reviewer: <Link to={`/Users/${user.id}`}>{user.firstName} {user.lastName}.</Link>  Product: <Link to={`/Products/${product.id}`}>{product.name}</Link></h3>
+        <div className={styles.reviewItemWrapper}>
+            <h3>Reviewer: <Link to={`/Users/${user.id}`}>{user.firstName} {user.lastName}. </Link>  
+                Product: <Link to={`/Products/${product.id}`}>{product.name}</Link>
+            </h3>
 
-            <p>{comment}</p>
-            <p>Rating: {rating} ⭐</p>
-            <p>Commented: {createdAt}</p>
+            <p className={styles.comment}>{comment}</p>
+            <p className={styles.rating}>Rating: {rating} ⭐</p>
+            <p className={styles.createdAt}>Commented: {createdAt}</p>
 
 
 

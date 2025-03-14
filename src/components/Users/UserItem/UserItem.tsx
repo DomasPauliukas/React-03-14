@@ -4,6 +4,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { User } from "../../Types/ExportTypes";
 import { useReactContext } from "../../ContextProvider/ContextProvider";
+import styles from "./UserItem.module.css"
 
 
 const UserItem: React.FC = () => {
@@ -42,14 +43,14 @@ const UserItem: React.FC = () => {
       }
 
     return (
-        <div>
-            <div style={{paddingBottom:'50px'}}>
+        <div className={styles.userItemWrapper}>
+            <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
                 <div>
-                    <img src={profilePicture} alt="profile-picture" style={{height:'300px', width:'300px', objectFit:'cover'}}/>
-                    <p>{firstName} {lastName} (username: {username})</p>
+                    <img src={profilePicture} alt="profile-picture" className={styles.userImage}/>
                 </div>
 
-                <div>
+                <div className={styles.userInfo}>
+                    <p>{firstName} {lastName} (username: {username})</p>
                     <p>Address: {address}</p>
                     <p>You can contact this user via:</p>
                     <p>Email - {email}</p>
@@ -62,22 +63,26 @@ const UserItem: React.FC = () => {
                 </button>
             </div>
 
-        {reviews && reviews.length > 0 ? (
+        <div className={styles.reviewsWrapper}>
+          {reviews && reviews.length > 0 ? (
             <div>
                 <h3>{reviews.length > 1 ? 'Reviews' : 'Review:'}</h3>
-                {reviews.map((review) => (
-                    <li key={review.id}>
-                    <Link to={`/Products/${review.productId}`}>
-                        {review.comment}
-                    </Link>
-                    </li>
-                ))}
+                <ul className={styles.reviewsList}>
+                    {reviews.map((review) => (
+                        <li key={review.id} className={styles.reviewItem}>
+                        <Link to={`/Products/${review.productId}`}>
+                            {review.comment}
+                        </Link>
+                        </li>
+                    ))}
+                </ul>
             </div>
         ) : (
             <h3>No reviews yet...</h3>
         )}
 
         </div>
+    </div>
     )
 }
 export default UserItem

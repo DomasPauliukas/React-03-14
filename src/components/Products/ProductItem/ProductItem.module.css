@@ -1,0 +1,116 @@
+.productItemWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+}
+  
+.productItemWrapper img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+  
+.productItemWrapper h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+  
+.productItemWrapper p {
+    font-size: 1rem;
+    color: #666;
+    margin: 5px 0;
+}
+  
+.productItemWrapper .price {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #27ae60;
+}
+  
+.productItemWrapper .stock {
+    font-size: 1rem;
+    color: #e74c3c;
+}
+  
+.productItemWrapper .rating {
+    font-size: 1.2rem;
+    color: #f39c12;
+}
+  
+.productItemWrapper button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  
+.productItemWrapper button:hover {
+    background-color: #2980b9;
+}
+  
+.productItemWrapper .reviews {
+    margin-top: 30px;
+    text-align: left;
+    width: 100%;
+}
+  
+.productItemWrapper .reviews h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+  
+.productItemWrapper .reviews ul {
+    list-style-type: none;
+    padding: 0;
+}
+  
+.productItemWrapper .reviews li {
+    margin-bottom: 15px;
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+  
+.productItemWrapper .reviews li a {
+    color: #2980b9;
+    font-size: 1rem;
+    text-decoration: none;
+}
+  
+.productItemWrapper .reviews li a:hover {
+    text-decoration: underline;
+}
+  
+.productItemWrapper .reviews li p {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}
+  
+.productItemWrapper .reviews li button {
+    background-color: #e74c3c;
+    padding: 5px 10px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+  
+.productItemWrapper .reviews li button:hover {
+    background-color: #c0392b;
+}
