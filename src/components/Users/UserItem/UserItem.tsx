@@ -5,7 +5,14 @@ import { useEffect, useState } from "react";
 import { User } from "../../Types/ExportTypes";
 import { useReactContext } from "../../ContextProvider/ContextProvider";
 import styles from "./UserItem.module.css"
+import styled from "styled-components";
 
+const WrapperDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`
 
 const UserItem: React.FC = () => {
     const { setUsers } = useReactContext()
@@ -44,7 +51,7 @@ const UserItem: React.FC = () => {
 
     return (
         <div className={styles.userItemWrapper}>
-            <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
+            <WrapperDiv>
                 <div>
                     <img src={profilePicture} alt="profile-picture" className={styles.userImage}/>
                 </div>
@@ -61,7 +68,7 @@ const UserItem: React.FC = () => {
                 <button>
                     <Link to={`/Users/edit/${id}`}>Edit user</Link>
                 </button>
-            </div>
+            </WrapperDiv>
 
         <div className={styles.reviewsWrapper}>
           {reviews && reviews.length > 0 ? (
