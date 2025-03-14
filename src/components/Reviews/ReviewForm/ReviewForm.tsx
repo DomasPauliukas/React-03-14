@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { User } from "../../Types/ExportTypes";
 
 interface ReviewFormProps {
-  users: any[];
+  users: User[];
   onSubmit: (reviewData: { rating: number; comment: string; userId: string }) => void;
 }
 
@@ -26,40 +27,23 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ users, onSubmit }) => {
   };
 
   return (
+
     <form onSubmit={handleFormSubmit}>
-      <div>
+      <div className="formControl">
         <label>Rating (1-5):</label>
-        <input
-          type="number"
-          name="rating"
-          value={newReview.rating}
-          onChange={handleInputChange}
-          min={1}
-          max={5}
-          required
-        />
+        <input type="number" name="rating" value={newReview.rating} onChange={handleInputChange} min={1} max={5} required/>
       </div>
 
-      <div>
+      <div className="formControl">
         <label>Comment:</label>
-        <textarea
-          name="comment"
-          value={newReview.comment}
-          onChange={handleInputChange}
-          required
-        />
+        <textarea name="comment" value={newReview.comment} onChange={handleInputChange} required/>
       </div>
 
-      <div>
+      <div className="formControl">
         <label>Select User:</label>
-        <select
-          name="userId"
-          value={newReview.userId}
-          onChange={handleInputChange}
-          required
-        >
+        <select name="userId" value={newReview.userId} onChange={handleInputChange} required>
           <option value="">Select a user</option>
-          {users.map((user: any) => (
+          {users.map((user) => (
             <option key={user.id} value={user.id}>
               {user.firstName} {user.lastName}
             </option>

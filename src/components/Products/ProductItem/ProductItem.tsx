@@ -3,16 +3,16 @@ import { useEffect, useState } from "react"
 import { API_URL } from "../../API_URL"
 import axios from "axios"
 import ReviewForm from "../../Reviews/ReviewForm/ReviewForm"
+import { Product, Review } from "../../Types/ExportTypes"
 
-const ProductItem = () => {
+const ProductItem: React.FC = () => {
 
     const { id } = useParams()
     const navigate = useNavigate()
-    const [product, setProduct] = useState('')
+    const [product, setProduct] = useState<Product | null>(null)
     const [showReviewForm, setShowReviewForm] = useState(false);
     const [users, setUsers] = useState([])
-
-    const { name, description, price, stock, image, rating } = product
+    const { name, description, price, stock, image, rating } = product || {}
 
 
     useEffect(() => {
@@ -39,7 +39,7 @@ const ProductItem = () => {
         }
       };
 
-      const handleReviewSubmit = async (newReview) => {
+      const handleReviewSubmit = async (newReview: Review) => {
     
         const newReviewData = {
           productId: id,
@@ -67,10 +67,15 @@ const ProductItem = () => {
           const response = await axios.delete(`${API_URL}/reviews/${reviewId}`);
           console.log('Review deleted:', response.data);
       
-          setProduct((prevProduct) => ({
-            ...prevProduct,
-            reviews: prevProduct.reviews.filter((review) => review.id !== reviewId)
-          }));
+          setProduct((prevProduct) => {
+            if (!prevProduct) {
+              return null
+            }
+            return{
+              ...prevProduct,
+              reviews: prevProduct.reviews.filter((review: Review) => review.id !== reviewId)
+            }
+          });
         } catch (error) {
           console.error('Error deleting review:', error);
         }
@@ -92,7 +97,7 @@ const ProductItem = () => {
                 <p>stock: {stock}</p>
             </div>
 
-            <button onClick={() => deleteProduct(id)}>Delete product</button>
+            <button onClick={() => deleteProduct(id ?? '')}>Delete product</button>
             <button>
                 <Link to={`/Products/edit/${id}`}>Edit product</Link>
             </button>

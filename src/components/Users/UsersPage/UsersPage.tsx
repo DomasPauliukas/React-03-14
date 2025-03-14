@@ -1,24 +1,9 @@
-import axios from "axios"
-import { useEffect, useState } from "react"
-import { API_URL } from "../../API_URL"
 import { Link } from "react-router-dom"
+import { useReactContext } from "../../ContextProvider/ContextProvider"
 
 const UsersPage: React.FC = () => {
 
-const [users, setUsers] = useState([])
-
-useEffect( () => {
-    const fetchUsers = async () => {
-        try {
-            const {data} = await axios(`${API_URL}/users?_embed=reviews`)
-            setUsers(data)
-        } catch (error){
-            console.log(`Error fetching users data`, error)
-        }
-    }
-    fetchUsers()
-}, [])
-
+const { users } = useReactContext()
 
     return (
         <div>

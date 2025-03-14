@@ -13,11 +13,14 @@ import EditProduct from './components/Products/EditProduct/EditProduct.tsx'
 import ReviewsPage from './components/Reviews/ReviewsPage/ReviewsPage.tsx'
 import PageNavigator from './components/PageNavigator/PageNavigator.tsx'
 import HomePage from './HomePage.tsx'
+import { ReactContextProvider } from './components/ContextProvider/ContextProvider.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
     <PageNavigator/>
+    <ReactContextProvider>
+
       <Routes>
         <Route index element={<HomePage/>} />
 
@@ -34,6 +37,8 @@ createRoot(document.getElementById('root')!).render(
         <Route path='Reviews' element={<ReviewsPage/>} />
 
       </Routes>
+
+    </ReactContextProvider>
     
     </BrowserRouter>
   </StrictMode>,

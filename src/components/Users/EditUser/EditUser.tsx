@@ -3,10 +3,11 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { API_URL } from "../../API_URL"
 import UsersForm from "../UsersForm/UsersForm"
+import { User } from "../../Types/ExportTypes"
 
-const EditUser = () => {
+const EditUser: React.FC = () => {
     const { id } = useParams()
-    const [user, setUser] = useState()
+    const [user, setUser] = useState<User | null>(null)
 
     useEffect(() => {
         async function fetchComment() {
@@ -14,7 +15,7 @@ const EditUser = () => {
           setUser(data);
         }
         fetchComment();
-      }, []);
+      }, [id]);
 
 
     return (

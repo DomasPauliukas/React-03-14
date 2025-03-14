@@ -2,14 +2,16 @@ import axios from "axios";
 import { API_URL } from "../../API_URL";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { User } from "../../Types/ExportTypes";
+import { useReactContext } from "../../ContextProvider/ContextProvider";
 
 
-const UserItem = () => {
-
+const UserItem: React.FC = () => {
+    const { setUsers } = useReactContext()
     const navigate = useNavigate()
     const { id } = useParams()
-    const [user, setUser] = useState('')
-    const { profilePicture, firstName, lastName, username, address, phone, email } = user
+    const [user, setUser] = useState<User | null>(null)
+    const { profilePicture, firstName, lastName, username, address, phone, email, reviews } = user || {}
 
 
     useEffect(() => {
@@ -19,12 +21,15 @@ const UserItem = () => {
           setUser(userData);
         }
         fetchComment();
-      }, []);
+      }, [id]);
 
-    const deleteUser = async (id) => {
+    const deleteUser = async (id: string) => {
         try {
           const response = await axios.delete(`${API_URL}/users/${id}`);
           console.log('User deleted:', response.data);
+          const usersResponse = await axios.get(`${API_URL}/users`);
+          setUsers(usersResponse.data); 
+
           navigate('/Users')
 
         } catch (error) {
@@ -51,17 +56,17 @@ const UserItem = () => {
                     <p>Phone: {phone}</p>
                 </div>
 
-                <button onClick={() => deleteUser(id)}>Delete user</button>
+                <button onClick={() => deleteUser(id ?? '')}>Delete user</button>
                 <button>
                     <Link to={`/Users/edit/${id}`}>Edit user</Link>
                 </button>
             </div>
 
-        {user.reviews && user.reviews.length > 0 ? (
+        {reviews && reviews.length > 0 ? (
             <div>
-                <h3>{user.reviews.length > 1 ? 'Reviews' : 'Review:'}</h3>
-                {user.reviews.map((review, index) => (
-                    <li key={index}>
+                <h3>{reviews.length > 1 ? 'Reviews' : 'Review:'}</h3>
+                {reviews.map((review) => (
+                    <li key={review.id}>
                     <Link to={`/Products/${review.productId}`}>
                         {review.comment}
                     </Link>

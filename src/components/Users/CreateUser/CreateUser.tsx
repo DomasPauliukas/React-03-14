@@ -1,8 +1,6 @@
 import UsersForm from "../UsersForm/UsersForm"
 
-const CreateUser = () => {
-
-
+const CreateUser: React.FC = () => {
     return (
         <div>
             <h1>Create User</h1>
