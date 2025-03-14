@@ -1,9 +1,16 @@
 import { Link } from "react-router-dom"
+import { Review } from "../../Types/ExportTypes";
 
+type ReviewItemProps = {
+    review: Review;
+  };
 
-const ReviewItem = ( {review} ) => {
+const ReviewItem: React.FC<ReviewItemProps> = ( {review} ) => {
     const { rating, comment, createdAt, product, user } = review
 
+    if (!review) {
+        return <p>Loading reviews...</p>;
+      }
 
     return (
         <div>

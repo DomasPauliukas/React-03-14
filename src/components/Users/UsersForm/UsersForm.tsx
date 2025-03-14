@@ -1,12 +1,18 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { useNavigate, useParams } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { API_URL } from "../../API_URL"
+import { User } from "../../Types/ExportTypes"
+import { useReactContext } from "../../ContextProvider/ContextProvider"
 
-const UsersForm: React.FC = (props) => {
+type UserFormProps = {
+    editUserData?: User | null
+}
+
+const UsersForm: React.FC<UserFormProps> = (props) => {
 
 const { editUserData } = props
-const { id } = useParams()
+const { setUsers } = useReactContext()
 
 const [username, setUsername] = useState<string>('')
 const [email, setEmail] = useState<string>('')
@@ -51,23 +57,27 @@ const formHandler = (event: React.FormEvent) => {
         phone,
         profilePicture
     }
+
 if (editUserData) {
-    axios.put(`${API_URL}/users/${editUserData.id}`, newUser);
-    navigate(`/Users/${editUserData.id}`);
+    axios.put(`${API_URL}/users/${editUserData.id}`, newUser)
+        .then(() => {
+            axios.get(`${API_URL}/users`).then((response) => {
+            setUsers(response.data)
+            navigate(`/Users/${editUserData.id}`);
+            });
+        })
 } else {
     axios.post(`${API_URL}/users`, newUser)
-    .then(() => {
-      navigate('/Users');
+    .then((response) => {
+        setUsers((prevUsers) => [...prevUsers, response.data])
+        navigate('/Users');
+        
     })
     .catch((error) => {
       console.error('Error creating user:', error);
     });
 }
-
-
-
 }
-
     return (
 
         <div>

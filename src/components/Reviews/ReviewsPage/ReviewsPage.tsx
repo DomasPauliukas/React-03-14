@@ -1,23 +1,12 @@
-import { useEffect, useState } from "react"
-import { API_URL } from "../../API_URL"
-import axios from "axios"
 import ReviewItem from "../ReviewItem/ReviewItem"
+import { useReactContext } from "../../ContextProvider/ContextProvider"
 
-const ReviewsPage = () => {
+const ReviewsPage: React.FC = () => {
+    const { reviews } = useReactContext()
 
-    const [reviews, setReviews] = useState('')
-
-    useEffect( () => {
-        const fetchReviews = async () => {
-            try {
-                const {data} = await axios(`${API_URL}/reviews?_embed=product&_embed=user`)
-                setReviews(data)
-            } catch (error){
-                console.log(`Error fetching reviews data`, error)
-            }
-        }
-        fetchReviews()
-    }, [])
+    if (!reviews) {
+        return <p>Loading reviews...</p>;
+      }
 
     return (
         <div>

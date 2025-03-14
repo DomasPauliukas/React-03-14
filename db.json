@@ -21,14 +21,14 @@
       "rating": 4
     },
     {
-      "id": "3",
-      "name": "Coffee Maker",
+      "name": "Coffee Maker!",
       "description": "Brew your perfect cup of coffee.",
       "price": 150,
-      "categoryId": "2",
-      "stock": 30,
       "image": "https://i5.walmartimages.com/seo/Mainstays-Black-5-Cup-Drip-Coffee-Maker-New_16f77040-27ab-4008-9852-59c900d7a7d9_1.c524f1d9c465e122596bf65f939c8d26.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
-      "rating": 4.7
+      "stock": 30,
+      "categoryId": "2",
+      "rating": "no rating yet",
+      "id": "3"
     },
     {
       "id": "4",
@@ -198,16 +198,6 @@
       "address": "707 Elm St, Springfield",
       "phone": "555-3456",
       "profilePicture": "https://beaconnected.me/wp-content/uploads/sites/24763/2021/12/headshot_1-min.jpg"
-    },
-    {
-      "username": "Bunke",
-      "email": "domas.pauliukas@codeacademylt.onmicrosoft.com",
-      "lastName": "Bunke",
-      "firstName": "Kristina",
-      "address": "Kaunas",
-      "phone": "asas564",
-      "photo": "",
-      "id": "345d"
     }
   ],
   "reviews": [

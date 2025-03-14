@@ -1,33 +1,13 @@
-import { useEffect, useState } from "react";
-import { API_URL } from "../../API_URL";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useReactContext } from "../../ContextProvider/ContextProvider";
 
-const ProductsPage = () => {
+const ProductsPage: React.FC = () => {
 
-    const [categories, setCategories] = useState([])
-    const [products, setProducts] = useState([])
-    const [selectedCategory, setSelectedCategory] = useState<string>('')
-    const [filteredProducts, setFilteredProducts] = useState([])
-  
-    useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const categoryResponse = await fetch(`${API_URL}/categories`)
-          const productResponse = await fetch(`${API_URL}/products`)
-  
-          const categoriesData = await categoryResponse.json();
-          const productsData = await productResponse.json();
-  
-          setCategories(categoriesData)
-          setProducts(productsData)
-          setFilteredProducts(productsData)
-        } catch (error) {
-          console.error("Error fetching data:", error)
-        }
-      }
-  
-      fetchData()
-    }, []);
+  const { products, categories } = useReactContext()
+
+  const [selectedCategory, setSelectedCategory] = useState<string>('')
+  const [filteredProducts, setFilteredProducts] = useState(products)
   
     const handleCategoryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
       const categoryId = event.target.value

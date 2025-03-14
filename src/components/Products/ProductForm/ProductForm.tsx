@@ -2,8 +2,13 @@ import { useEffect, useState } from "react";
 import { API_URL } from "../../API_URL";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import { Category, Product } from "../../Types/ExportTypes";
 
-const ProductForm: React.FC = ({editProductData}) => {
+type ProductFormProps = {
+  editProductData?: Product
+}
+
+const ProductForm: React.FC<ProductFormProps> = ({editProductData}) => {
     const { id } = useParams()
 
     const [name, setName] = useState('')
@@ -14,8 +19,6 @@ const ProductForm: React.FC = ({editProductData}) => {
     const [categoryId, setCategoryId] = useState('')
     const [categories, setCategories] = useState([])
 
-
-    // const [newProduct, setNewProduct] = useState('')
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -136,7 +139,7 @@ if (editProductData) {
             required
           >
             <option value="">Select a category</option>
-            {categories.map((category) => (
+            {categories.map((category: Category) => (
               <option key={category.id} value={category.id}>
                 {category.name}
               </option>
