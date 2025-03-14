@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom"
-import HomeNavigation from "../../NavigationToHomePage"
 import { useEffect, useState } from "react"
 import axios from "axios"
 import { API_URL } from "../../API_URL"
@@ -24,11 +23,7 @@ const EditProduct: React.FC = () => {
 
     return (
         <div>
-            <h1>Products EDIT</h1>
-
             <ProductForm editProductData={product}/>
-
-        <HomeNavigation/>
         </div>
     )
 }

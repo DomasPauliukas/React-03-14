@@ -4,6 +4,16 @@ import { useParams } from "react-router-dom"
 import { API_URL } from "../../API_URL"
 import UsersForm from "../UsersForm/UsersForm"
 import { User } from "../../Types/ExportTypes"
+import styled from "styled-components"
+
+const EditTitle = styled.h1`
+    text-align: center;
+    text-decoration: underline;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    color: #2c3e50;
+    font-size: 32px;
+    margin-bottom: 20px;
+`
 
 const EditUser: React.FC = () => {
     const { id } = useParams()
@@ -20,7 +30,7 @@ const EditUser: React.FC = () => {
 
     return (
         <div>
-            <h1>Edit User</h1>
+            <EditTitle>Edit user</EditTitle>
 
             <UsersForm editUserData={user}/>
         </div>

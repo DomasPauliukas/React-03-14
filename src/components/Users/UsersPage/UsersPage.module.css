@@ -1,0 +1,75 @@
+.usersPageWrapper {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.usersPageWrapper h1 {
+    font-size: 32px;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+.usersList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    list-style-type: none;
+    padding: 0;
+}
+
+
+.userItemCard {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+
+.userItemCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+
+.userItemCard h2 {
+    font-size: 24px;
+    color: #3498db;
+    margin-bottom: 10px;
+}
+  
+.userItemCard p {
+    font-size: 16px;
+    color: #34495e;
+    margin-bottom: 15px;
+}
+
+.createButton {
+    display: block;
+    margin: 40px auto;
+    padding: 15px 30px;
+    background-color: #3498db;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    width: 250px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+  
+.createButton:hover {
+    background-color: #2980b9;
+}
+  
+.createButton:focus {
+    outline: none;
+}

@@ -5,6 +5,7 @@ import axios from "axios"
 import ReviewForm from "../../Reviews/ReviewForm/ReviewForm"
 import { Product, Review } from "../../Types/ExportTypes"
 import { toast } from "react-toastify"
+import styles from './ProductItem.module.css'
 
 const ProductItem: React.FC = () => {
 
@@ -90,20 +91,19 @@ const ProductItem: React.FC = () => {
       }
 
     return (
-        <div>
-            <div>
-                <h1>Products ITEM</h1>
+        <div className={styles.productItemWrapper}>
+            
                 <img src={image} alt="" style={{width:'300px', height:'300px'}}/>
-                <p>{rating} STARS</p>
                 <h2>{name}</h2>
+                <p className={styles.rating}>Rating: {rating}</p>
                 <p>{description}</p>
-                <p>price: {price}</p>
-                <p>stock: {stock}</p>
-            </div>
+                <p className={styles.price}>price: {price}</p>
+                <p className={styles.stock}>stock: {stock}</p>
+            
 
             <button onClick={() => deleteProduct(id ?? '')}>Delete product</button>
             <button>
-                <Link to={`/Products/edit/${id}`}>Edit product</Link>
+                <Link to={`/Products/edit/${id}`} style={{color:'white'}}>Edit product</Link>
             </button>
             <button onClick={() => setShowReviewForm(!showReviewForm)}>Add Review</button>
 
@@ -113,6 +113,7 @@ const ProductItem: React.FC = () => {
                 <ReviewForm users={users} onSubmit={handleReviewSubmit} />
             )}
 
+          <div className={styles.reviews}>
             {product.reviews && product.reviews.length > 0 ? (
             <div>
                 <h3>{product.reviews.length > 1 ? 'Reviews' : 'Review:'}</h3>
@@ -130,6 +131,7 @@ const ProductItem: React.FC = () => {
         ) : (
             <h3>No reviews yet...</h3>
         )}   
+          </div>
         </div>
 
         </div>

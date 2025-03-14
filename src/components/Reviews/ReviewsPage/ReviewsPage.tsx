@@ -10,8 +10,6 @@ const ReviewsPage: React.FC = () => {
 
     return (
         <div>
-            <h1>ReviewsPage</h1>
-
             {reviews && reviews.length > 0 ? (
                 <div>
                     <h1>{reviews.length > 1 ? 'Reviews:' : 'Review:'}</h1>

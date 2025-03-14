@@ -1,14 +1,14 @@
 {
   "products": [
     {
-      "id": "1",
       "name": "Laptop",
       "description": "A powerful laptop for gaming and work.",
       "price": 1200,
-      "categoryId": "1",
-      "stock": 50,
       "image": "https://www.egnetas.lt/wp-content/uploads/2024/04/Microsoft-Surface-Laptop-6-15-platinum-nesiojamas-kompiuteris.jpg",
-      "rating": 4.5
+      "stock": 50,
+      "categoryId": "1",
+      "rating": 4.5,
+      "id": "1"
     },
     {
       "id": "2",
@@ -27,7 +27,7 @@
       "image": "https://i5.walmartimages.com/seo/Mainstays-Black-5-Cup-Drip-Coffee-Maker-New_16f77040-27ab-4008-9852-59c900d7a7d9_1.c524f1d9c465e122596bf65f939c8d26.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
       "stock": 30,
       "categoryId": "2",
-      "rating": "no rating yet",
+      "rating": 3.7,
       "id": "3"
     },
     {
@@ -141,14 +141,14 @@
       "profilePicture": "https://www.perfocal.com/blog/content/images/2021/01/Perfocal_17-11-2019_TYWFAQ_100_standard-3.jpg"
     },
     {
-      "id": "5",
       "username": "alice_jones",
       "email": "alice@example.com",
-      "firstName": "Alice",
       "lastName": "Jones",
+      "firstName": "Alice",
       "address": "102 Maple St, Springfield",
       "phone": "555-6789",
-      "profilePicture": "https://annemariesegal.com/wp-content/uploads/2017/04/adobestock_86346713-cropped-young-woman-in-suit.jpg?w=640"
+      "profilePicture": "https://annemariesegal.com/wp-content/uploads/2017/04/adobestock_86346713-cropped-young-woman-in-suit.jpg?w=640",
+      "id": "5"
     },
     {
       "id": "6",

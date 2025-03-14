@@ -4,8 +4,6 @@ const CreateProduct: React.FC = () => {
 
     return (
         <div>
-            <h1>Products CREATE</h1>
-
             <ProductForm/>
         </div>
     )
