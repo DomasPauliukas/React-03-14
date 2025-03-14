@@ -84,27 +84,27 @@ if (editUserData) {
             <form onSubmit={formHandler}>
                 <div className="formControl">
                     <label htmlFor="username">Username:</label>
-                    <input type="text" name="username" id="username" value={username} onChange={usernameHandler}/>
+                    <input type="text" name="username" id="username" value={username} onChange={usernameHandler} required/>
                 </div>
                 <div className="formControl">
                     <label htmlFor="email">Email:</label>
-                    <input type="text" name="email" id="email" value={email} onChange={emailHandler}/>
+                    <input type="text" name="email" id="email" value={email} onChange={emailHandler} required/>
                 </div>
                 <div className="formControl">
                     <label htmlFor="firstName">First name:</label>
-                    <input type="text" name="firstName" id="firstName" value={firstName} onChange={firstNameHandler}/>
+                    <input type="text" name="firstName" id="firstName" value={firstName} onChange={firstNameHandler} required/>
                 </div>
                 <div className="formControl">
                     <label htmlFor="lastName">Last name:</label>
-                    <input type="text" name="lastName" id="lastName" value={lastName} onChange={lastNameHandler}/>
+                    <input type="text" name="lastName" id="lastName" value={lastName} onChange={lastNameHandler} required/>
                 </div>
                 <div className="formControl">
                     <label htmlFor="address">Address:</label>
-                    <input type="text" name="address" id="address" value={address} onChange={addressHandler}/>
+                    <input type="text" name="address" id="address" value={address} onChange={addressHandler} required/>
                 </div>
                 <div className="formControl">
                     <label htmlFor="phone">Phone number:</label>
-                    <input type="text" name="phone" id="phone" value={phone} onChange={phoneHandler}/>
+                    <input type="text" name="phone" id="phone" value={phone} onChange={phoneHandler} required/>
                 </div>
                 <div className="formControl">
                     <label htmlFor="photo">Your photo link:</label>

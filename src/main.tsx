@@ -14,12 +14,14 @@ import ReviewsPage from './components/Reviews/ReviewsPage/ReviewsPage.tsx'
 import PageNavigator from './components/PageNavigator/PageNavigator.tsx'
 import HomePage from './HomePage.tsx'
 import { ReactContextProvider } from './components/ContextProvider/ContextProvider.tsx'
+import { ToastContainer } from 'react-toastify'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
     <PageNavigator/>
     <ReactContextProvider>
+      <ToastContainer/>
 
       <Routes>
         <Route index element={<HomePage/>} />

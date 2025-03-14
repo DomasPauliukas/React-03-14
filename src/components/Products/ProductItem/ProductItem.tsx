@@ -4,6 +4,7 @@ import { API_URL } from "../../API_URL"
 import axios from "axios"
 import ReviewForm from "../../Reviews/ReviewForm/ReviewForm"
 import { Product, Review } from "../../Types/ExportTypes"
+import { toast } from "react-toastify"
 
 const ProductItem: React.FC = () => {
 
@@ -17,25 +18,25 @@ const ProductItem: React.FC = () => {
 
     useEffect(() => {
         async function fetchProduct() {
-          const res = await fetch(`${API_URL}/products/${id}?_embed=reviews`);
-          const productData = await res.json();
-          setProduct(productData);
+          const res = await fetch(`${API_URL}/products/${id}?_embed=reviews`)
+          const productData = await res.json()
+          setProduct(productData)
 
-          const usersRes = await fetch(`${API_URL}/users`);
-          const usersData = await usersRes.json();
-          setUsers(usersData);
+          const usersRes = await fetch(`${API_URL}/users`)
+          const usersData = await usersRes.json()
+          setUsers(usersData)
         }
-        fetchProduct();
+        fetchProduct()
       }, [id]);
 
       const deleteProduct = async (id: string) => {
         try {
-          const response = await axios.delete(`${API_URL}/products/${id}`);
-          console.log('Product deleted:', response.data);
+          const response = await axios.delete(`${API_URL}/products/${id}`)
+          console.log('Product deleted:', response.data)
           navigate('/Products')
 
         } catch (error) {
-          console.error('Error deleting product:', error);
+          console.error('Error deleting product:', error)
         }
       };
 
@@ -50,22 +51,25 @@ const ProductItem: React.FC = () => {
         };
     
         try {
-          await axios.post(`${API_URL}/reviews`, newReviewData);
+          await axios.post(`${API_URL}/reviews`, newReviewData)
+          toast.success('Review was created!', {position: "bottom-center"})
+
     
-          const res = await fetch(`${API_URL}/products/${id}?_embed=reviews`);
-          const updatedProductData = await res.json();
-          setProduct(updatedProductData);
+          const res = await fetch(`${API_URL}/products/${id}?_embed=reviews`)
+          const updatedProductData = await res.json()
+          setProduct(updatedProductData)
     
-          setShowReviewForm(false);
+          setShowReviewForm(false)
         } catch (error) {
-          console.error("Error adding review:", error);
+          console.error("Error adding review:", error)
         }
       }
 
       const deleteReview = async (reviewId: string) => {
         try {
-          const response = await axios.delete(`${API_URL}/reviews/${reviewId}`);
-          console.log('Review deleted:', response.data);
+          const response = await axios.delete(`${API_URL}/reviews/${reviewId}`)
+          toast.error('Review was deleted!', {position: "bottom-center"})
+          console.log('Review deleted:', response.data)
       
           setProduct((prevProduct) => {
             if (!prevProduct) {
@@ -82,7 +86,7 @@ const ProductItem: React.FC = () => {
       };
 
       if (!product) {
-        return <div>Loading...</div>;
+        return <div>Loading...</div>
       }
 
     return (
