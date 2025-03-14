@@ -1,4 +1,7 @@
 import styles from './HomePage.module.css'
+import usersLogo from './assets/UsersLogo.jpg'
+import productsLogo from './assets/productsLogo.png'
+import reviewsLogo from './assets/reviewsLogo.png'
 
 const HomePage: React.FC = () => {
   return (
@@ -11,19 +14,28 @@ const HomePage: React.FC = () => {
           <a href="/Products" className={styles.styledButton}>Browse Products</a>
         </div>
       </section>
-
+      {/* className={styles.secondarySectionItem} */}
       <section className={styles.secondarySection}>
-        <div className={styles.secondarySectionItem}>
-          <h2>Users</h2>
-          <p>Connect with a community of users and share your experiences.</p>
+        <div className="card" style={{width: '18rem'}}>
+          <img src={usersLogo} alt="user-logo" className='class="card-img-top"' style={{height:'250px', objectFit:'cover'}}/>
+          <div className="card-body">
+            <h2>Users</h2>
+            <p className="card-text">Connect with a community of users and share your experiences.</p>
+          </div>
         </div>
-        <div className={styles.secondarySectionItem}>
-          <h2>Products</h2>
-          <p>Explore a variety of products to find what suits you best.</p>
+        <div className="card" style={{width: '18rem'}}>
+          <img src={productsLogo} alt="product-logo" className='class="card-img-top"' style={{height:'250px', objectFit:'cover'}}/>
+          <div className="card-body">
+            <h2>Products</h2>
+            <p className="card-text">Explore a variety of products to find what suits you best.</p>
+          </div>
         </div>
-        <div className={styles.secondarySectionItem}>
-          <h2>Reviews</h2>
-          <p>Check out reviews and see what others think before purchasing.</p>
+        <div className="card" style={{width: '18rem'}}>
+          <img src={reviewsLogo} alt="reviews-logo" className='class="card-img-top"' style={{height:'250px', objectFit:'cover'}}/>
+          <div className="card-body">
+            <h2>Reviews</h2>
+            <p className="card-text">Check out reviews and see what others think before purchasing.</p>
+          </div>
         </div>
       </section>
     </div>

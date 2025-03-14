@@ -1,5 +1,11 @@
 import ReviewItem from "../ReviewItem/ReviewItem"
 import { useReactContext } from "../../ContextProvider/ContextProvider"
+import styled from "styled-components"
+
+const ReviewTitle = styled.h1`
+    text-align: center;
+    margin-top: 100px;
+`
 
 const ReviewsPage: React.FC = () => {
     const { reviews } = useReactContext()
@@ -12,7 +18,7 @@ const ReviewsPage: React.FC = () => {
         <div>
             {reviews && reviews.length > 0 ? (
                 <div>
-                    <h1 style={{textAlign:'center', marginTop:'100px'}}>{reviews.length > 1 ? 'Reviews:' : 'Review:'}</h1>
+                    <ReviewTitle>{reviews.length > 1 ? 'Reviews:' : 'Review:'}</ReviewTitle>
         
                     {reviews.map((review, index) => (
                             <ReviewItem key={index} review={review}/>
